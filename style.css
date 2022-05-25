@@ -1,0 +1,30 @@
+:root{
+    --sky:#ccefff;
+    --grass:#68a067;
+    --dirt:#bb6d50;
+    --dirt-shadow:#a3553b;
+    --white-rabbit:#fbfafc;
+    --pink-rabbit:#fac7d2;
+    --black-rabbit:#787273;
+    --red-text:#a36c5b;
+}
+body{
+    display: grid;
+    place-content: center;
+    margin: 0;
+    height:100vh;
+    width: 100%;
+}
+.phone{
+    position:relative;
+    height: 600px;
+    width: 300px;
+    border: #000 solid 8px;
+    border-radius: 30px;
+    background-color: var(--sky);
+    box-shadow:0 19px 38px rgba(0, 0, 0, 0.30), 
+        0 19px 38px rgba(0, 0, 0, 0.30);
+}
+.layer{
+    position: absolute;
+}
