@@ -7,6 +7,7 @@
     --pink-rabbit:#fac7d2;
     --black-rabbit:#787273;
     --red-text:#a36c5b;
+    /* counter-reset: score 0; */
 }
 *{
     box-sizing: border-box;
@@ -29,6 +30,9 @@ body{
         0 19px 38px rgba(0, 0, 0, 0.30);
     overflow:hidden;
 }
+/* .phone h1::after{
+    content: counter(score);
+} */
 .layer{
     position: absolute;
     bottom: 0;
@@ -38,6 +42,7 @@ body{
     height: 460px;
     width: 70px;
     background-color: rgba(255, 255, 194, 0);
+    
 }
 .ear{
     position: absolute;
@@ -75,6 +80,25 @@ body{
     background-color: var(--black-rabbit);
     box-shadow:var(--black-rabbit) 15px 0 0;
 }
+.rabbit input[type="checkbox"]{
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    right: 0;
+    left: 0;
+    height: 80px;
+    width: 70px;
+    margin: 0 auto;
+    appearance: none;
+    cursor: pointer;
+}
+.rabbit input[type="checkbox"]:focus{
+    outline: none;
+}
+/* .rabbit input[type="checkbox"]:checked {
+    counter-increment: score;
+} */
+
 .mountain{
     background-color: var(--dirt);
     border-radius: 22px;
@@ -87,7 +111,7 @@ body{
       height: 20px;
       width: 100%;
     border-radius: 20px 20px 0 0;
-  }
+}
   .zigzag {
     background: linear-gradient(
 135deg
@@ -98,13 +122,17 @@ body{
   height: 30px;
   width: 100%;
 }
+
 .layer-1{
     z-index:1;
     right: 60px;
+    animation-duration: 2s;
+    
 }
 .layer-2{
     z-index:2;
     left: 60px;
+    animation-duration: 1s;
 }
 .layer-3{
     z-index:3;
@@ -117,6 +145,7 @@ body{
     z-index:4;
     left: 15px;
     height: 340px;
+    animation-duration: 1.5s;
 }
 .layer-5{
     z-index:5;
@@ -127,6 +156,7 @@ body{
     z-index:6;
     right: 15px;
     height: 260px;
+    animation-duration: 2.5s;
 }
 .layer-7{
     z-index:7;
@@ -134,6 +164,7 @@ body{
     width: 150px;
     height: 200px;
 }
+
 .circle{
     position: absolute;
     background-color: var(--white-rabbit);
@@ -141,7 +172,6 @@ body{
     width: 70px;
     border-radius: 50%;
 }
-
 .layer-8{
     z-index:8;
     right: 0;
@@ -171,8 +201,6 @@ body{
     right: 4px;
 }
 
-
-
 .layer-9{
     z-index:9;
     left: -10px;
@@ -195,8 +223,6 @@ body{
     left: 0;
 }
 
-
-
 .layer-10{
     z-index:10;
     right: -10px;
@@ -218,3 +244,40 @@ body{
     right: 0;
 }
 
+/* ANIMATION */
+
+/* .eye{
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    0%{
+        height: 4px;
+    }
+    5%{
+        height: 1px;
+        transform: translate(0, 2px);
+    }
+    10%{
+        height: 4px;
+     }
+
+} */
+
+.rabbit{
+    animation-name:jumping;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+@keyframes jumping{
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(65px);
+    }
+    100%{
+        transform: translateY(0px)
+    }
+}
